@@ -1,0 +1,132 @@
+<?php
+session_start();
+if(!array_key_exists('username', $_SESSION))
+{
+    header("location:../logout1.php");
+}
+  ?>
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>Add Customer</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<head><script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+        <?php $home=1;include_once('../header.php');?>
+                <div class="container">
+<CENTER><H3>ADD CUSTOMER</H3></CENTER>
+	<form action="success.php" method="post">
+<div class="form-group">
+  <label>Customer Name</label>
+      <input type="text" required placeholder="Eg:Soumyajit Datta" name="custname" class="form-control"></div><div class="form-group">
+        <label>Customer Phone</label>
+			<input type="text" required placeholder="Eg:9876543210" name="custph" class="form-control"></div><div class="form-group">
+        <label>GST Number</label>
+        <input type="text"  placeholder="Eg:G346634" name="gst" id="gst" class="form-control"></div>
+        <div class="row">
+          <div class="col">
+        <div class="form-group">
+          <label>Customer Address</label>
+        <input type="text" required placeholder="Eg:43,Shakespeare Sarani,Exide More,Kolkata" name="custadd" class="form-control"></div></div><div class="form-group">
+          <label>State Name</label>
+          <div class="col">
+      <input list="state" name="statename" placeholder="Eg:West Bengal" onchange="showCustomer(this.value)" class="form-control">
+    </input></div></div>
+  </div>
+  <div class="row">
+    <div class="col">
+  <div class="form-group">
+      <label>TIN</label>
+      <input type="text"  placeholder="Eg:19" id="tin" name="tin" class="form-control" readonly></div></div>
+      <div class="form-group"><div class="col">
+        <label>State ID</label>
+      <input type="text" readonly id="statec" name="statecode" placeholder="Eg:WB" class="form-control"></div>
+    </div>
+    <div class="form-group"><div class="col">
+      <label>GSTIN</label>
+    <input type="text" readonly id="gstinn"  placeholder="Eg:G34663419" class="form-control"></div>
+  </div>
+  </div>
+      <div class="form-group">
+			<CENTER><button type="submit" class="btn btn-success" value="INSERT">INSERT<i class="fas fa-arrow-right"></i></button></CENTER></div>
+		</form>
+    <datalist id="state">
+      <option value="ANDHRA PRADESH">
+      <option value="ARUNACHAL PRADESH">
+      <option value="ASSAM">
+      <option value="BIHAR">
+      <option value="CHHATISGARH">
+      <option value="GOA">
+      <option value="GUJARAT">
+      <option value="HARIYANA">
+      <option value="HIMACHAL PRADESH">
+      <option value="JHARKHAND">
+      <option value="KARNATAKA">
+      <option value="KERALA">
+      <option value="MADHYA PRADESH">
+      <option value="MAHARASHTRA">
+      <option value="MANIPUR">
+      <option value="MEGHALAYA">
+      <option value="MIZORAM">
+      <option value="NAGALAND">
+      <option value="ODISHA">
+      <option value="PUNJAB">
+      <option value="RAJASTHAN">
+      <option value="SIKKIM">
+      <option value="TAMIL NADU">
+      <option value="TELENGANA">
+      <option value="TRIPURA">
+      <option value="UTTAR PRADESH">
+      <option value="UTTARAKHAND">
+      <option value="WEST BENGAL">
+      <option value="ANDAMAN AND NICOBAR">
+      <option value="CHANDIGARH">
+      <option value="DADRA AND NAGAR HAVELI">
+      <option value="LADAKH">
+      <option value="LAKSHADEEP">
+      <option value="DELHI">
+      <option value="PUDUCHERRY">
+    </datalist>
+
+    <div id="txtHint"></div></div>
+</body>
+<script>
+
+
+function showCustomer(str) {
+  var xhttp;
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+      var codenew=document.getElementById('codei').value;
+      document.getElementById('statec').value=codenew;
+      var codenew=document.getElementById('tini').value;
+      document.getElementById('tin').value=codenew;
+      var gst=document.getElementById('gst').value;
+      var tin=document.getElementById('tin').value;
+      document.getElementById('gstinn').value=gst.concat(tin);
+    }
+  };
+  xhttp.open("GET", "../univ/state.php?q="+str, true);
+  xhttp.send();
+}
+</script>
+<style>
+*{
+  font-family: 'Poppins';
+}
+.cust{
+  font-size: 1.4rem;
+  z-index: -1 !important;
+}
+</style>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styleregister.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="img">
+			<img src="logo2.png">
+		</div>
+		<div class="login-content">
+			<form action="registersuccess.php" method="POST">
+				<img src="avatar.svg">
+				<h2 class="title">REGISTER</h2>
+           		<div class="input-div one">
+           		  
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input" name="username" required>
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" name="password" required>
+            	   </div>
+            	   
+            	</div>
+            	<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-address-book"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contact</h5>
+           		    	<input type="phone" class="input" name="contact" required>
+            	   </div>
+            	   
+            	</div>
+            	 <div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-users-cog"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Admin code</h5>
+           		   		<input type="number" class="input" name="email" required>
+           		   </div>
+           		</div>
+
+            	<a href="homepage1.php">Sign in instead.</a>
+              <a href="whatisadmin.php">What is admin code?</a>
+              <a href="ifyouadmin.php">What to do if you are admin?</a>
+            	<input type="submit" class="btn" value="Register" >
+
+           </form>
+         </div>
+       </div>
+
+    <script type="text/javascript" src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.box-container {
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.box {
+    margin-bottom: 30px;
+    display: inline-block;
+    position: relative;
+  }
+.input1
+ {
+      padding: 5px 10px;
+      height: 45px;
+      font-size: 1em;
+      line-height: 45px;
+      border: 2px solid #ccc;
+      width: 400px;
+      outline: none;
+      background: #fff;
+      color: #a2a5a7;
+    }
+    .input2
+     {
+          padding:0;
+          height: 30px;
+          line-height: 45px;
+          border: 2px solid #ccc;
+          width: 130px;
+          outline: none;
+          background: #fff;
+        }
+        .btn
+        {
+        	align-items: center;
+          float: left;
+        	display: block;
+        	justify-content: center;
+        	width: 200px;
+        	height: 50px;
+        	border-radius: 25px;
+        	outline: none;
+        	border: none;
+        	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+        	background-size: 100%;
+        	font-size: 1.2rem;
+        	color: #fff;
+        	font-family: 'Poppins', sans-serif;
+        	text-transform: uppercase;
+        	margin: 1rem 0;
+        	cursor: pointer;
+        	transition: .5s;
+
+        }
